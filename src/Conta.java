@@ -1,4 +1,4 @@
-import javax.management.remote.SubjectDelegationPermission;
+
 
 public class Conta {
     int numero;
@@ -38,10 +38,14 @@ public class Conta {
         this.saldo = saldo;
     }
 
-   /* public void validaConta(int numero) {// reconhece se digitar 0, porem não passa pelo vetor para ver se existe o valor no vetor
-        this.numero = numero;
-        if ((numero == 0) || (numero != getNumero())) {
-            System.out.println("Conta não pode ser criada");
+    public void validaConta(int numero, Conta [] conta , int tam_vetor ) {//
+
+          for(int i=1; i <= conta.length; i++){
+              System.out.println("Numero do Array" +conta[i].getNumero());
+              System.out.println("Numero:" + numero);
+            if ((numero == 0) || (numero == conta[i].getNumero())){
+                System.out.println("Conta não pode ser criada");
+            }
         }
-    }*/
+    }
 }
