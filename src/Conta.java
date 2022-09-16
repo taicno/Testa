@@ -38,12 +38,18 @@ public class Conta {
         this.saldo = saldo;
     }
 
-    public void validaConta(int numero, Conta [] conta , int tam_vetor ) {//
+    public void validaConta(int numero, Conta[] conta) {//
 
-          for(int i=1; i <= conta.length; i++){
-              System.out.println("Numero do Array" +conta[i].getNumero());
-              System.out.println("Numero:" + numero);
-            if ((numero == 0) || (numero == conta[i].getNumero())){
+        this.numero = numero;
+        /*Quando coloca (<=) ele não roda informa "Exception in thread "main" java.lang.NullPointerException",
+               agora se deixar (<) ele roda sem passar pela pelo inicio do vetor*/
+
+        for (Conta value : conta) {
+
+            System.out.println("Numero do Array" + value.getNumero());
+            System.out.println("Numero:" + numero);
+
+            if ((numero == 0) || (numero == value.getNumero())) {
                 System.out.println("Conta não pode ser criada");
             }
         }
